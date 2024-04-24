@@ -1,4 +1,7 @@
-[checkpoint]
+[checkpoint-rabang]
+192.168.56.110
+
+[checkpoint-nollan]
 192.168.56.109
 
 [checkpoint-niemo]
@@ -9,3 +12,4 @@
 
 [checkpoint-ramos]
 192.168.56.102
+
