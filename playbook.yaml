@@ -11,7 +11,7 @@
     - name: Adding rule to deny specific IP (server1)
       ufw:
         rule: deny
-        from: 192.168.56.110
+        from: 192.168.56.109
 
     - name: Restarting of UFW Firewall
       service:
@@ -31,10 +31,10 @@
     - name: Adding rule to deny specific IP (server1)
       ufw:
         rule: deny
-        from: 192.168.56.110
+        from: 192.168.56.109
 
     - name: Deleting a Firewall Rule
-      command: ufw delete deny from 192.168.56.110
+      command: ufw delete deny from 192.168.56.109
 
     - name: Restarting the UFW Firewall
       service:
