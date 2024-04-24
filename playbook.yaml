@@ -1,0 +1,43 @@
+---
+- name: Block IP Address
+  hosts: checkpoint
+  become: true
+  tasks:
+    - name: Verification of UFW
+      apt:
+        name: ufw
+        state: present
+
+    - name: Adding rule to deny specific IP (server1)
+      ufw:
+        rule: deny
+        from: 192.168.56.110
+
+    - name: Restarting of UFW Firewall
+      service:
+        name: ufw
+        state: restarted
+        enabled: yes
+
+- name: Delete Block List Entry
+  hosts: checkpoint
+  become: true
+  tasks:
+    - name: Verification of UFW
+      apt:
+        name: ufw
+        state: present
+
+    - name: Adding rule to deny specific IP (server1)
+      ufw:
+        rule: deny
+        from: 192.168.56.110
+
+    - name: Deleting a Firewall Rule
+      command: ufw delete deny from 192.168.56.110
+
+    - name: Restarting the UFW Firewall
+      service:
+        name: ufw
+        state: restarted
+        enabled: yes
